@@ -11,16 +11,20 @@
         v-model="post.body"
         class="input"
         type="text"
-        placeholder="Описание поста"
-    >
-    <button class="btn" @click="createPost">
+        placeholder="Описание поста">
+    <my-button
+        @click="createPost"
+        style="align-self: self-end; margin-top: 10px;">
       Создать
-    </button>
+    </my-button>
   </form>
 </template>
 
 <script>
+import MyButton from "@/components/UI/MyButton.vue";
+
 export default {
+  components: {MyButton},
   data() {
     return {
       post: {
@@ -57,20 +61,4 @@ export default {
   border-radius: 5px;
 }
 
-.btn {
-  align-self: flex-end;
-  margin-top: 10px;
-  padding: 10px 10px;
-  color: teal;
-  font-weight: bold;
-  background: none;
-  border: 1px solid teal;
-  border-radius: 5px;
-}
-
-.btn:hover {
-  color: aliceblue;
-  background-color: teal;
-  cursor: pointer;
-}
 </style>
